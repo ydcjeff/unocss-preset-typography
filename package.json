@@ -23,6 +23,7 @@
     "release": "npx bumpp package.json --commit \"release: v\" --push --tag"
   },
   "devDependencies": {
+    "@iconify-json/carbon": "^1.0.9",
     "@types/estree": "^0.0.50",
     "@types/node": "^16.11.7",
     "marked": "^4.0.3",

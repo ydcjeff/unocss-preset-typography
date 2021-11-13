@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import { presetAttributify, presetUno } from 'unocss'
+import { presetAttributify, presetUno, presetIcons } from 'unocss'
 import { presetTypography } from './src'
 
 import unocss from 'unocss/vite'
@@ -7,7 +7,12 @@ import unocss from 'unocss/vite'
 export default defineConfig({
   plugins: [
     unocss({
-      presets: [presetAttributify(), presetUno(), presetTypography()]
+      presets: [
+        presetAttributify(),
+        presetIcons(),
+        presetUno(),
+        presetTypography()
+      ]
     })
   ],
   build: {
