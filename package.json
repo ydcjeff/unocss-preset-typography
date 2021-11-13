@@ -1,6 +1,6 @@
 {
   "name": "unocss-preset-typography",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Typography Preset for UnoCSS",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -19,7 +19,8 @@
     "build": "vite build && tsc && mv temp/index.d.ts dist",
     "build-demo": "DEMO=demo vite build",
     "preview": "vite preview",
-    "fmt": "prettier -w ."
+    "fmt": "prettier -w .",
+    "release": "npx bumpp package.json --commit \"release: v\" --push --tag"
   },
   "devDependencies": {
     "@types/estree": "^0.0.50",
