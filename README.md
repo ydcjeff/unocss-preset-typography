@@ -42,6 +42,7 @@ export default defineConfig({
 ```html
 <article class="prose prose-truegray xl:prose-xl">
   {{ markdown }}
+  <p class="not-prose">some text</p>
 </article>
 ```
 
@@ -53,6 +54,7 @@ export default defineConfig({
 ```html
 <article prose prose-truegray xl="prose-xl">
   {{ markdown }}
+  <p class="not-prose">some text</p>
 </article>
 ```
 
@@ -65,11 +67,15 @@ export default defineConfig({
 ## Highlight
 
 - Almost same styles as TailwindCSS/WindiCSS Typography.
+
 - `prose` does not have any color by default, instead use any color supported by
   UnoCSS for theme color (for e.g. `prose-coolgray`, `prose-sky`)
   with the exception of `black`, `white`, `light`, and `dark`.
+
 - Use `prose-invert` for typographic dark mode (background color needs to be handled by users).
+
 - No style resetting, styles outside of `prose` will stay the same.
+
 - Apply `not-prose` to the elements that you don't want the typographic styles to apply.
 
 ## Utilities
