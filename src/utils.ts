@@ -1,3 +1,7 @@
+// Below functions are referenced from
+// https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
+// License MIT - TailwindCSS
+
 export function round(num: Number): string {
   return num
     .toFixed(7)

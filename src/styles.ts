@@ -9,6 +9,10 @@ interface Style {
   '2xl': Record<string, string | object>
 }
 
+// Below styles are referenced from
+// https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
+// License MIT - TailwindCSS
+
 export const styles: Style = {
   sm: {
     'font-size': rem(14),
