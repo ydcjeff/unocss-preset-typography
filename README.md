@@ -54,7 +54,7 @@ export default defineConfig({
 ```html
 <article prose prose-truegray xl="prose-xl">
   {{ markdown }}
-  <p class="not-prose">some text</p>
+  <p not-prose>some text</p>
 </article>
 ```
 
