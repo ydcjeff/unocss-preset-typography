@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UnoCSS Preset Typography</title>
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/antfu/unocss/main/playground/public/favicon.svg"
+      type="image/svg+xml"
+    />
+  </head>
+
+  <body class="bg-white font-sans m-0 py-6 px-4 antialiased dark:bg-dark-800">
+    <main
+      class="
+        mx-auto
+        prose prose-truegray
+        lg:prose-lg
+        xl:prose-xl
+        2xl:prose-2xl
+        dark:prose-invert
+      "
+    >
+      <button
+        un-m="b-4"
+        un-p="x-2 y-2"
+        un-border="rounded-md truegray-300 dark:truegray-600 solid"
+        un-text="truegray-700 dark:truegray-300"
+        un-bg="truegray-200 dark:dark-200 hover:truegray-300 dark:hover:dark-300"
+        type="button"
+        title="Toggle Light/Dark Mode"
+        id="toggle"
+      >
+        Toggle Light/Dark Mode
+      </button>
+      <a
+        href="https://github.com/ydcjeff/unocss-preset-typography"
+        target="_blank"
+        rel="noopener noreferrer"
+        >GitHub</a
+      >
+      <div id="readme"></div>
+      <hr />
+      <div id="play"></div>
+    </main>
+
+    <script src="https://unpkg.com/shiki"></script>
+    <script type="module">
+      import 'uno.css'
+      import { marked } from 'marked'
+      import readme from './README.md?raw'
+      import play from './play.md?raw'
+
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark')
+      }
+
+      document.getElementById('readme').innerHTML = marked.parse(readme, {
+        langPrefix: ''
+      })
+
+      document.getElementById('play').innerHTML = marked.parse(play, {
+        langPrefix: ''
+      })
+
+      document.getElementById('toggle').addEventListener('click', (e) => {
+        e.preventDefault()
+        document.documentElement.classList.toggle('dark')
+      })
+
+      const preBlocks = document.querySelectorAll('pre')
+
+      shiki
+        .getHighlighter({
+          theme: 'material-palenight',
+          langs: ['html', 'sh', 'js']
+        })
+        .then((hl) => {
+          for (const block of preBlocks) {
+            block.outerHTML = hl.codeToHtml(
+              block.textContent,
+              block.firstElementChild.className || 'text'
+            )
+          }
+        })
+    </script>
+  </body>
+</html>

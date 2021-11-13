@@ -1,0 +1,58 @@
+{
+  "name": "unocss-preset-typography",
+  "version": "0.0.2",
+  "description": "Typography Preset for UnoCSS",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc && mv temp/index.d.ts dist",
+    "build-demo": "DEMO=demo vite build",
+    "preview": "vite preview",
+    "fmt": "prettier -w ."
+  },
+  "devDependencies": {
+    "@types/estree": "^0.0.50",
+    "@types/node": "^16.11.7",
+    "marked": "^4.0.3",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4",
+    "unocss": "^0.8.1",
+    "vite": "^2.6.14"
+  },
+  "peerDependencies": {
+    "unocss": "^0.8.1"
+  },
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "printWidth": 80,
+    "trailingComma": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ydcjeff/unocss-preset-typography.git"
+  },
+  "keywords": [
+    "unocss",
+    "unocss-preset",
+    "unocss-preset-typography"
+  ],
+  "author": "Jeff Yang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ydcjeff/unocss-preset-typography/issues"
+  },
+  "homepage": "https://unocss-preset-typography.vercel.app"
+}
