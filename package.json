@@ -1,6 +1,6 @@
 {
   "name": "unocss-preset-typography",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Typography Preset for UnoCSS",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
