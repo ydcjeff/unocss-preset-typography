@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@iconify-json/carbon': ^1.0.9
+  '@iconify-json/carbon': ^1.0.10
   '@types/estree': ^0.0.50
   '@types/node': ^16.11.7
   marked: ^4.0.3
@@ -11,7 +11,7 @@ specifiers:
   vite: ^2.6.14
 
 devDependencies:
-  '@iconify-json/carbon': 1.0.9
+  '@iconify-json/carbon': 1.0.10
   '@types/estree': 0.0.50
   '@types/node': 16.11.7
   marked: 4.0.3
@@ -21,10 +21,10 @@ devDependencies:
   vite: 2.6.14
 
 packages:
-  /@iconify-json/carbon/1.0.9:
+  /@iconify-json/carbon/1.0.10:
     resolution:
       {
-        integrity: sha512-ZId8OBOIM8/nA+6NrpxgAWhNfVPY+hT+VlmVhZEXqwZoAkVS4ygB0bCBoanVV6OHA5wONc9hr6UnUQ990paQLA==
+        integrity: sha512-Tw/bjIWIJ8cx3lTqqvETkui3Z7dNW1j/kYTckAmjiGNJhlMi7b4pL7iFyxnkb3Y7dpia1ZNQOwzHUXMxxxk6WA==
       }
     dependencies:
       '@iconify/types': 1.0.10

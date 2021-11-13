@@ -953,8 +953,7 @@ export const styles: Style = {
 }
 
 export function getCSS(
-  // @ts-ignore
-  styles,
+  styles: Style,
   prose: string,
   variantHandlers: VariantHandler[]
 ): string {
