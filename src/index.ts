@@ -1,5 +1,6 @@
 import { Preset } from 'unocss'
 import { rules } from './rules'
+import { TypographyOptions } from './types'
 
 /**
  * UnoCSS Preset for Typography
@@ -19,10 +20,11 @@ import { rules } from './rules'
  * ```
  *
  * @returns typography preset
+ * @public
  */
-export function presetTypography(): Preset {
+export function presetTypography(options?: TypographyOptions): Preset {
   return {
     name: 'unocss-preset-typography',
-    rules
+    rules: rules(options)
   }
 }

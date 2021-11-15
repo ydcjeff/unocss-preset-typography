@@ -1,13 +1,6 @@
 import { em, round, rem } from './utils'
 import { VariantHandler, escapeSelector } from 'unocss'
-
-interface Style {
-  sm: Record<string, string | object>
-  base: Record<string, string | object>
-  lg: Record<string, string | object>
-  xl: Record<string, string | object>
-  '2xl': Record<string, string | object>
-}
+import { Style } from './types'
 
 // Below styles are referenced from
 // https://github.com/tailwindlabs/tailwindcss-typography/blob/master/src/styles.js
@@ -955,7 +948,8 @@ export const styles: Style = {
 export function getCSS(
   styles: Style,
   prose: string,
-  variantHandlers: VariantHandler[]
+  variantHandlers: VariantHandler[],
+  className: string
 ): string {
   let css = ''
   let end = ''
@@ -981,19 +975,19 @@ export function getCSS(
         css += ` :where(${key.slice(
           0,
           -8
-        )}):not(:where([class~="not-prose"]))::before`
+        )}):not(:where([class~="not-${className}"]))::before`
       } else if (key.endsWith('::after')) {
         css += ` :where(${key.slice(
           0,
           -7
-        )}):not(:where([class~="not-prose"]))::after`
+        )}):not(:where([class~="not-${className}"]))::after`
       } else if (key.endsWith('::marker')) {
         css += ` :where(${key.slice(
           0,
           -8
-        )}):not(:where([class~="not-prose"]))::marker`
+        )}):not(:where([class~="not-${className}"]))::marker`
       } else if (!isStrValue) {
-        css += ` :where(${key}):not(:where([class~="not-prose"]))`
+        css += ` :where(${key}):not(:where([class~="not-${className}"]))`
       }
     }
 

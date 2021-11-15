@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc && mv temp/index.d.ts dist",
+    "build": "tsc && vite build && api-extractor run",
     "build-demo": "DEMO=demo vite build",
     "preview": "vite preview",
     "fmt": "prettier -w .",
@@ -24,16 +24,17 @@
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.0.10",
+    "@microsoft/api-extractor": "^7.18.19",
     "@types/estree": "^0.0.50",
     "@types/node": "^16.11.7",
     "marked": "^4.0.3",
     "prettier": "^2.4.1",
     "typescript": "^4.4.4",
-    "unocss": "^0.8.1",
+    "unocss": "^0.9.3",
     "vite": "^2.6.14"
   },
   "peerDependencies": {
-    "unocss": "^0.8.1"
+    "unocss": "^0.9.3"
   },
   "prettier": {
     "semi": false,

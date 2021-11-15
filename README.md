@@ -80,13 +80,13 @@ export default defineConfig({
 
 ## Utilities
 
-| Rules              | Body font size  |
-| ------------------ | --------------- |
-| `prose-sm`         | 0.875rem (14px) |
-| `prose/prose-base` | 1rem (16px)     |
-| `prose-lg`         | 1.125rem (18px) |
-| `prose-xl`         | 1.25rem (20px)  |
-| `prose-2xl`        | 1.5rem (24px)   |
+| Rules       | Body font size  |
+| ----------- | --------------- |
+| `prose-sm`  | 0.875rem (14px) |
+| `prose`     | 1rem (16px)     |
+| `prose-lg`  | 1.125rem (18px) |
+| `prose-xl`  | 1.25rem (20px)  |
+| `prose-2xl` | 1.5rem (24px)   |
 
 | Rules (color)    |
 | ---------------- |
