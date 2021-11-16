@@ -5,7 +5,7 @@
     "reportFolder": "./temp/"
   },
   "docModel": {
-    "enabled": true
+    "enabled": false
   },
   "tsdocMetadata": {
     "enabled": false
@@ -13,7 +13,6 @@
   "mainEntryPointFilePath": "./temp/index.d.ts",
   "dtsRollup": {
     "enabled": true,
-    "untrimmedFilePath": "",
-    "publicTrimmedFilePath": "./dist/index.d.ts"
+    "untrimmedFilePath": "./dist/index.d.ts"
   }
 }
