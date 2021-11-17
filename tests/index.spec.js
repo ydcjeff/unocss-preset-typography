@@ -4,7 +4,7 @@ import { suite } from 'uvu'
 import * as assert from 'uvu/assert'
 import { createGenerator, presetUno } from 'unocss'
 import { presetTypography } from 'unocss-preset-typography'
-import { genSnapshot } from './utils.mjs'
+import { genSnapshot } from './utils.js'
 
 const typography = suite('typography')
 

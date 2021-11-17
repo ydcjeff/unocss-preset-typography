@@ -22,7 +22,7 @@ export default defineConfig({
       : {
           entry: './src/index.ts',
           formats: ['es', 'cjs'],
-          fileName: (fmt: string) => 'index' + (fmt === 'es' ? `.mjs` : `.cjs`)
+          fileName: (fmt: string) => 'index' + (fmt === 'es' ? `.js` : `.cjs`)
         },
     rollupOptions: {
       external: ['unocss']
