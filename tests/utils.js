@@ -16,7 +16,7 @@ const _dirname = path.dirname(url.fileURLToPath(import.meta.url))
  */
 export function genSnapshot(data, fname, update) {
   const snapshotDir = path.resolve(_dirname, snapshotDirName)
-  const fpath = path.join(snapshotDir, fname + '.css')
+  const fpath = path.join(snapshotDir, fname + '.css.snap')
 
   if (!fs.existsSync(snapshotDir)) {
     fs.mkdirSync(snapshotDir)

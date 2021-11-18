@@ -1,0 +1,157 @@
+/* layer: default */
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+/* layer: typography */
+.custom :where(h1, h2, h3, h4, h5, h6):not(.not-custom) {
+  color: var(--uno-prose-headings);
+  font-weight: 600;
+  line-height: 1.25;
+}
+.custom :where(a):not(.not-custom) {
+  color: var(--uno-prose-links);
+  text-decoration: underline;
+  font-weight: 500;
+}
+.custom :where(a code):not(.not-custom) {
+  color: var(--uno-prose-links);
+}
+.custom :where(p, ul, ol):not(.not-custom) {
+  margin: 1em 0;
+  line-height: 1.75;
+}
+.custom :where(blockquote):not(.not-custom) {
+  margin: 1em 0;
+  padding-left: 1em;
+  font-style: italic;
+  border-left: 0.25em solid var(--uno-prose-quote-borders);
+}
+.custom :where(h1):not(.not-custom) {
+  margin: 1rem 0;
+  font-size: 2.25em;
+}
+.custom :where(h2):not(.not-custom) {
+  margin: 1.75em 0 0.5em;
+  font-size: 1.75em;
+}
+.custom :where(h3):not(.not-custom) {
+  margin: 1.5em 0 0.5em;
+  font-size: 1.375em;
+}
+.custom :where(h4):not(.not-custom) {
+  margin: 1em 0;
+  font-size: 1.125em;
+}
+.custom :where(img, video):not(.not-custom) {
+  max-width: 100%;
+}
+.custom :where(figure):not(.not-custom) {
+  margin: 1em 0;
+}
+.custom :where(figcaption):not(.not-custom) {
+  color: var(--uno-prose-captions);
+  font-size: 0.875em;
+}
+.custom :where(code):not(.not-custom) {
+  color: var(--uno-prose-code);
+  font-size: 0.875em;
+  font-weight: 600;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    Liberation-Mono, Courier-New, monospace;
+}
+.custom :where(:not(pre) > code):not(.not-custom)::before,
+.custom :where(:not(pre) > code):not(.not-custom)::after {
+  content: '`';
+}
+.custom :where(pre):not(.not-custom) {
+  padding: 1.25rem 1.5rem;
+  margin: 0;
+  overflow-x: auto;
+  border-radius: 0.375rem;
+}
+.custom :where(pre, code):not(.not-custom) {
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+  background: transparent;
+}
+.custom :where(pre code):not(.not-custom) {
+  font-weight: inherit;
+}
+.custom :where(ol, ul):not(.not-custom) {
+  padding-left: 1.25em;
+}
+.custom :where(ul):not(.not-custom) {
+  list-style-type: disc;
+}
+.custom :where(ol > li):not(.not-custom)::marker,
+.custom :where(ul > li):not(.not-custom)::marker {
+  color: var(--uno-prose-counters);
+}
+.custom :where(hr):not(.not-custom) {
+  margin: 2em 0;
+  border: 1px solid var(--uno-prose-hr);
+}
+.custom :where(table):not(.not-custom) {
+  display: block;
+  margin: 1em 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+}
+.custom :where(tr:nth-child(2n)):not(.not-custom) {
+  background-color: var(--uno-prose-tr-bg);
+}
+.custom :where(td, th):not(.not-custom) {
+  border: 1px solid var(--uno-prose-td-borders);
+  padding: 0.625em 1em;
+}
+.custom {
+  color: var(--uno-prose-body);
+  max-width: 65ch;
+}
+.custom-teal {
+  --uno-prose-body: #0f766e;
+  --uno-prose-headings: #134e4a;
+  --uno-prose-lead: #0d9488;
+  --uno-prose-links: #134e4a;
+  --uno-prose-bold: #134e4a;
+  --uno-prose-counters: #14b8a6;
+  --uno-prose-bullets: #5eead4;
+  --uno-prose-hr: #99f6e4;
+  --uno-prose-quotes: #134e4a;
+  --uno-prose-quote-borders: #99f6e4;
+  --uno-prose-captions: #14b8a6;
+  --uno-prose-code: #134e4a;
+  --uno-prose-pre-code: #99f6e4;
+  --uno-prose-pre-bg: #115e59;
+  --uno-prose-th-borders: #5eead4;
+  --uno-prose-td-borders: #99f6e4;
+  --uno-prose-tr-bg: #ccfbf1;
+}
+.dark .dark\:custom-invert {
+  --uno-prose-body: #5eead4;
+  --uno-prose-headings: #fff;
+  --uno-prose-lead: #2dd4bf;
+  --uno-prose-links: #fff;
+  --uno-prose-bold: #fff;
+  --uno-prose-counters: #2dd4bf;
+  --uno-prose-bullets: #0d9488;
+  --uno-prose-hr: #0f766e;
+  --uno-prose-quotes: #ccfbf1;
+  --uno-prose-quote-borders: #0f766e;
+  --uno-prose-captions: #2dd4bf;
+  --uno-prose-code: #fff;
+  --uno-prose-pre-code: #5eead4;
+  --uno-prose-pre-bg: rgb(0 0 0 / 50%);
+  --uno-prose-th-borders: #0d9488;
+  --uno-prose-td-borders: #0f766e;
+  --uno-prose-tr-bg: #115e59;
+}

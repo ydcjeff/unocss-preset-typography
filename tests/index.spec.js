@@ -2,7 +2,7 @@
 
 import { suite } from 'uvu'
 import * as assert from 'uvu/assert'
-import { createGenerator, presetUno } from 'unocss'
+import { createGenerator, presetUno, presetAttributify } from 'unocss'
 import { presetTypography } from 'unocss-preset-typography'
 import { genSnapshot } from './utils.js'
 import prettier from 'prettier'
@@ -13,38 +13,41 @@ const typography = suite('typography')
 const testConfigs = [
   // prose test
   {
-    name: 'prose-&-text-base',
-    input: 'prose text-base',
-    typographyOptions: {}
-  },
-  { name: 'prose-&-text-sm', input: 'prose text-sm', typographyOptions: {} },
-  { name: 'prose-&-text-lg', input: 'prose text-lg', typographyOptions: {} },
-  { name: 'prose-&-text-xl', input: 'prose text-xl', typographyOptions: {} },
-  {
-    name: 'prose-&-text-2xl',
-    input: 'prose text-2xl',
+    name: 'prose-class',
+    input: 'prose text-base prose-teal dark:prose-invert',
     typographyOptions: {}
   },
 
-  // prose & screen variants test
+  // custom prose test
   {
-    name: 'prose-&-sm:text-sm',
-    input: 'prose sm:text-sm',
+    name: 'prose-class-custom',
+    input: 'custom text-base custom-teal dark:custom-invert',
+    typographyOptions: { className: 'custom' }
+  },
+
+  // prose attribute test
+  {
+    name: 'prose-attribute',
+    input: '<main prose text-base prose-teal dark="prose-invert"></main>',
     typographyOptions: {}
   },
 
-  // custom className test
+  // custom prose attribute test
   {
-    name: 'className-testing-&-text-base',
-    input: 'testing text-base',
-    typographyOptions: { className: 'testing' }
+    name: 'prose-attribute-custom',
+    input: '<main custom text-base custom-teal dark="custom-invert"></main>',
+    typographyOptions: { className: 'custom' }
   }
 ]
 
 for (const tc of testConfigs) {
   typography(tc.name, async () => {
     const generator = createGenerator({
-      presets: [presetUno(), presetTypography(tc.typographyOptions)]
+      presets: [
+        presetAttributify(),
+        presetUno(),
+        presetTypography(tc.typographyOptions)
+      ]
     })
 
     let { css } = await generator.generate(tc.input)
