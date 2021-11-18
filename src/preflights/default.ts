@@ -43,16 +43,16 @@ export const DEFAULT = {
   'img,video': {
     'max-width': '100%'
   },
-  figure: {
+  'figure,picture': {
     margin: '1em 0'
   },
   figcaption: {
     color: 'var(--uno-prose-captions)',
-    'font-size': '0.875em'
+    'font-size': '.875em'
   },
   code: {
     color: 'var(--uno-prose-code)',
-    'font-size': '0.875em',
+    'font-size': '.875em',
     'font-weight': 600,
     'font-family':
       'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation-Mono,Courier-New,monospace'
@@ -64,7 +64,7 @@ export const DEFAULT = {
     padding: '1.25rem 1.5rem',
     margin: 0,
     'overflow-x': 'auto',
-    'border-radius': '0.375rem'
+    'border-radius': '.375rem'
   },
   'pre,code': {
     'white-space': 'pre',
@@ -88,7 +88,7 @@ export const DEFAULT = {
   ul: {
     'list-style-type': 'disc'
   },
-  'ol > li::marker,ul > li::marker': {
+  'ol > li::marker,ul > li::marker,summary::marker': {
     color: 'var(--uno-prose-counters)'
   },
   hr: {
@@ -107,5 +107,25 @@ export const DEFAULT = {
   'td,th': {
     border: '1px solid var(--uno-prose-td-borders)',
     padding: '.625em 1em'
+  },
+  abbr: {
+    cursor: 'help'
+  },
+  kbd: {
+    color: 'var(--uno-prose-code)',
+    border: '1px solid',
+    padding: '.25rem .5rem',
+    'font-size': '.875em',
+    'border-radius': '.25rem'
+  },
+  details: {
+    margin: '1em 0',
+    padding: '1.25rem 1.5rem',
+    background: 'var(--uno-prose-tr-bg)',
+    'border-left': '.5em solid'
+  },
+  summary: {
+    cursor: 'pointer',
+    'font-weight': '600'
   }
 }

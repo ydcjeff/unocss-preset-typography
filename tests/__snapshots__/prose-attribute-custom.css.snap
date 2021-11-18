@@ -47,7 +47,7 @@
 [custom=''] :where(img, video):not(.not-custom) {
   max-width: 100%;
 }
-[custom=''] :where(figure):not(.not-custom) {
+[custom=''] :where(figure, picture):not(.not-custom) {
   margin: 1em 0;
 }
 [custom=''] :where(figcaption):not(.not-custom) {
@@ -94,7 +94,8 @@
   list-style-type: disc;
 }
 [custom=''] :where(ol > li):not(.not-custom)::marker,
-[custom=''] :where(ul > li):not(.not-custom)::marker {
+[custom=''] :where(ul > li):not(.not-custom)::marker,
+[custom=''] :where(summary):not(.not-custom)::marker {
   color: var(--uno-prose-counters);
 }
 [custom=''] :where(hr):not(.not-custom) {
@@ -113,6 +114,26 @@
 [custom=''] :where(td, th):not(.not-custom) {
   border: 1px solid var(--uno-prose-td-borders);
   padding: 0.625em 1em;
+}
+[custom=''] :where(abbr):not(.not-custom) {
+  cursor: help;
+}
+[custom=''] :where(kbd):not(.not-custom) {
+  color: var(--uno-prose-code);
+  border: 1px solid;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875em;
+  border-radius: 0.25rem;
+}
+[custom=''] :where(details):not(.not-custom) {
+  margin: 1em 0;
+  padding: 1.25rem 1.5rem;
+  background: var(--uno-prose-tr-bg);
+  border-left: 0.5em solid;
+}
+[custom=''] :where(summary):not(.not-custom) {
+  cursor: pointer;
+  font-weight: 600;
 }
 .custom,
 [custom=''] {

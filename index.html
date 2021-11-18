@@ -34,9 +34,8 @@
         rel="noopener noreferrer"
         >GitHub</a
       >
-      <div id="readme"></div>
-      <hr />
-      <div id="play"></div>
+      <span>(This link does not have prose styles applied)</span>
+      <div id="demo"></div>
     </main>
 
     <script src="https://unpkg.com/shiki"></script>
@@ -44,17 +43,12 @@
       import 'uno.css'
       import { marked } from 'marked'
       import readme from './README.md?raw'
-      import play from './play.md?raw'
 
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.classList.add('dark')
       }
 
-      document.getElementById('readme').innerHTML = marked.parse(readme, {
-        langPrefix: ''
-      })
-
-      document.getElementById('play').innerHTML = marked.parse(play, {
+      document.getElementById('demo').innerHTML = marked.parse(readme, {
         langPrefix: ''
       })
 

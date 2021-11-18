@@ -1,16 +1,18 @@
 # unocss-preset-typography
 
-<a href="https://npmjs.com/package/unocss-preset-typography" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.shields.io/npm/v/unocss-preset-typography" alt="npm version">
-</a>
-<a href="https://nodejs.org/en/about/releases/" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.shields.io/node/v/unocss-preset-typography" alt="node version">
-</a>
-<a href="https://github.com/ydcjeff/unocss-preset-typography/actions/workflows/ci.yml" target="_blank" rel="noopener noreferrer">
-  <img src="https://github.com/ydcjeff/unocss-preset-typography/actions/workflows/ci.yml/badge.svg" alt="CI status">
-</a>
+<p>
+  <a href="https://npmjs.com/package/unocss-preset-typography" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/npm/v/unocss-preset-typography" alt="npm version">
+  </a>
+  <a href="https://nodejs.org/en/about/releases/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/node/v/unocss-preset-typography" alt="node version">
+  </a>
+  <a href="https://github.com/ydcjeff/unocss-preset-typography/actions/workflows/ci.yml" target="_blank" rel="noopener noreferrer">
+    <img src="https://github.com/ydcjeff/unocss-preset-typography/actions/workflows/ci.yml/badge.svg" alt="CI status">
+  </a>
+</p>
 
-> UnoCSS Preset for Typography
+> Typography Preset for UnoCSS
 
 Installation:
 
@@ -36,7 +38,6 @@ export default defineConfig({
 })
 ```
 
-<div style="overflow: auto">
 <table>
 <thead>
 <tr style="text-align: center">
@@ -50,9 +51,11 @@ export default defineConfig({
 
 <!-- prettier-ignore -->
 ```html
-<article class="prose prose-truegray xl:prose-xl">
+<article class="text-base prose prose-truegray xl:text-xl">
   {{ markdown }}
-  <p class="not-prose">some text</p>
+  <p class="not-prose">
+    some text
+  </p>
 </article>
 ```
 
@@ -62,9 +65,11 @@ export default defineConfig({
 
 <!-- prettier-ignore -->
 ```html
-<article prose prose-truegray xl="prose-xl">
+<article text-base prose prose-truegray xl="text-xl">
   {{ markdown }}
-  <p not-prose>some text</p>
+  <p class="not-prose">
+    not-prose is only available in class.
+  </p>
 </article>
 ```
 
@@ -72,7 +77,6 @@ export default defineConfig({
 </tr>
 </tbody>
 </table>
-</div>
 
 ## Highlight
 
