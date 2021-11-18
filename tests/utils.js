@@ -11,9 +11,10 @@ const _dirname = path.dirname(url.fileURLToPath(import.meta.url))
  *
  * @param {string} data
  * @param {string} fname
+ * @param {boolean} update
  * @returns data
  */
-export function genSnapshot(data, fname) {
+export function genSnapshot(data, fname, update) {
   const snapshotDir = path.resolve(_dirname, snapshotDirName)
   const fpath = path.join(snapshotDir, fname + '.css')
 
@@ -21,10 +22,10 @@ export function genSnapshot(data, fname) {
     fs.mkdirSync(snapshotDir)
   }
 
-  if (fs.existsSync(fpath)) {
-    return fs.readFileSync(fpath, 'utf-8')
-  } else {
+  if (!fs.existsSync(fpath) || update) {
     fs.writeFileSync(fpath, data, 'utf-8')
     return data
+  } else {
+    return fs.readFileSync(fpath, 'utf-8')
   }
 }

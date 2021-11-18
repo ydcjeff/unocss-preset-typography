@@ -5,68 +5,39 @@ import * as assert from 'uvu/assert'
 import { createGenerator, presetUno } from 'unocss'
 import { presetTypography } from 'unocss-preset-typography'
 import { genSnapshot } from './utils.js'
+import prettier from 'prettier'
 
+const update = process.argv.includes('-u')
 const typography = suite('typography')
 
 const testConfigs = [
-  // prose & its modifiers
-  { name: 'prose', input: 'prose', typographyOptions: {} },
-  { name: 'prose-&-prose-sm', input: 'prose prose-sm', typographyOptions: {} },
-  { name: 'prose-&-prose-lg', input: 'prose prose-lg', typographyOptions: {} },
-  { name: 'prose-&-prose-xl', input: 'prose prose-xl', typographyOptions: {} },
+  // prose test
   {
-    name: 'prose-&-prose-2xl',
-    input: 'prose prose-2xl',
+    name: 'prose-&-text-base',
+    input: 'prose text-base',
+    typographyOptions: {}
+  },
+  { name: 'prose-&-text-sm', input: 'prose text-sm', typographyOptions: {} },
+  { name: 'prose-&-text-lg', input: 'prose text-lg', typographyOptions: {} },
+  { name: 'prose-&-text-xl', input: 'prose text-xl', typographyOptions: {} },
+  {
+    name: 'prose-&-text-2xl',
+    input: 'prose text-2xl',
     typographyOptions: {}
   },
 
-  // prose & its modifiers with screen variants
+  // prose & screen variants test
   {
-    name: 'prose-&-sm:prose-sm',
-    input: 'prose sm:prose-sm',
-    typographyOptions: {}
-  },
-  {
-    name: 'prose-&-lg:prose-lg',
-    input: 'prose lg:prose-lg',
-    typographyOptions: {}
-  },
-  {
-    name: 'prose-&-xl:prose-xl',
-    input: 'prose xl:prose-xl',
-    typographyOptions: {}
-  },
-  {
-    name: 'prose-&-2xl:prose-2xl',
-    input: 'prose 2xl:prose-2xl',
+    name: 'prose-&-sm:text-sm',
+    input: 'prose sm:text-sm',
     typographyOptions: {}
   },
 
-  // custom className
+  // custom className test
   {
-    name: 'className-test',
-    input: 'test',
-    typographyOptions: { className: 'test' }
-  },
-  {
-    name: 'className-test-&-test-sm',
-    input: 'test test-sm',
-    typographyOptions: { className: 'test' }
-  },
-  {
-    name: 'className-test-&-test-lg',
-    input: 'test test-lg',
-    typographyOptions: { className: 'test' }
-  },
-  {
-    name: 'className-test-&-test-xl',
-    input: 'test test-xl',
-    typographyOptions: { className: 'test' }
-  },
-  {
-    name: 'className-test-&-test-2xl',
-    input: 'test test-2xl',
-    typographyOptions: { className: 'test' }
+    name: 'className-testing-&-text-base',
+    input: 'testing text-base',
+    typographyOptions: { className: 'testing' }
   }
 ]
 
@@ -76,8 +47,16 @@ for (const tc of testConfigs) {
       presets: [presetUno(), presetTypography(tc.typographyOptions)]
     })
 
-    const { css } = await generator.generate(tc.input)
-    const expected = genSnapshot(css, tc.name)
+    let { css } = await generator.generate(tc.input)
+    css = prettier.format(css, {
+      semi: false,
+      tabWidth: 2,
+      singleQuote: true,
+      printWidth: 80,
+      trailingComma: 'none',
+      parser: 'css'
+    })
+    const expected = genSnapshot(css, tc.name, update)
 
     assert.snapshot(css, expected)
   })
