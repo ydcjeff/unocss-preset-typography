@@ -108,7 +108,7 @@
   border-collapse: collapse;
   overflow-x: auto;
 }
-[prose=''] :where(tr:nth-child(2n)):not(.not-prose) {
+[prose=''] :where(tr):not(.not-prose):nth-child(2n) {
   background-color: var(--uno-prose-tr-bg);
 }
 [prose=''] :where(td, th):not(.not-prose) {

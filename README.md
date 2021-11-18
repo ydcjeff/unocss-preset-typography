@@ -146,6 +146,68 @@ export default defineConfig({
 | `prose-coolgray` |
 | `prose-bluegray` |
 
+## Configurations
+
+This preset has `className` and `cssExtend` configurations for users who
+like to override or extend.
+
+The CSS declarations passed to `cssExtend` will
+
+- **override** the built-in styles if the values are conflicting, else
+
+- **be merged** deeply with built-in styles.
+
+```ts
+export interface TypographyOptions {
+  /**
+   * The class name to use the typographic utilities.
+   * Not to apply the styles to the elements, use it like
+   * `not-${className}` which is by default `not-prose`.
+   *
+   * Note: `not` utility is only usable in class.
+   *
+   * @defaultValue `prose`
+   */
+  className?: string
+
+  /**
+   * Extend or override CSS selectors with CSS declarations.
+   *
+   * @defaultValue undefined
+   */
+  cssExtend?: Record<string, CSSObject>
+}
+```
+
+### Example
+
+```ts
+// unocss.config.ts
+import { presetAttributify, presetUno, defineConfig } from 'unocss'
+import { presetTypography } from 'unocss-preset-typography'
+
+export default defineConfig({
+  presets: [
+    presetAttributify(), // required if using attributify mode
+    presetUno(), // required
+    presetTypography({
+      className: 'markdown', // now use like `markdown markdown-gray`, `not-markdown`
+      cssExtend: {
+        code: {
+          color: '#8b5cf6'
+        },
+        'a:hover': {
+          color: '#f43f5e'
+        },
+        'a:visited': {
+          color: '#14b8a6'
+        }
+      }
+    })
+  ]
+})
+```
+
 ## Acknowledgement
 
 - [TailwindCSS Typography](https://github.com/tailwindlabs/tailwindcss-typography)

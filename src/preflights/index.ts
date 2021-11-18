@@ -1,3 +1,4 @@
+import { mergeDeep } from 'unocss'
 import { DEFAULT } from './default'
 
 function getCSS(
@@ -10,31 +11,29 @@ function getCSS(
   for (const selector in preflights) {
     const cssDeclarations = preflights[selector]
 
-    if (
-      selector.endsWith('::before') ||
-      selector.endsWith('::after') ||
-      selector.endsWith('::marker')
-    ) {
-      css += selector
-        .split(',')
-        .map((s) => {
-          if (s.endsWith('::before')) {
-            s = s.replace('::before', '')
-            return `${selectorProse} :where(${s}):not(.not-${className})::before`
-          }
+    // since pseudo class & elements can't be matched
+    // within single :where(), they are splitted and rejoined.
+    const pseudoCSSMatchArray = selector
+      .split(',')
+      .map((s) => {
+        // pseudo class & pseudo elements matcher
+        // matches :, ::, -, (), numbers and words
+        const match = s.match(/::?(?:[\(\)\:\-\d\w]+)$/g)
 
-          if (s.endsWith('::after')) {
-            s = s.replace('::after', '')
-            return `${selectorProse} :where(${s}):not(.not-${className})::after`
-          }
+        if (match) {
+          const matchStr = match[0]
+          s = s.replace(matchStr, '')
+          return `${selectorProse} :where(${s}):not(.not-${className})${matchStr}`
+        }
+      })
+      .filter((v) => v)
 
-          if (s.endsWith('::marker')) {
-            s = s.replace('::marker', '')
-            return `${selectorProse} :where(${s}):not(.not-${className})::marker`
-          }
-        })
-        .join(',')
+    // rejoin pseudo class & elements
+    // multi selectors, single utility
+    if (pseudoCSSMatchArray.length) {
+      css += pseudoCSSMatchArray.join(',')
     } else {
+      // directly from css declaration
       css += `${selectorProse} :where(${selector}):not(.not-${className})`
     }
 
@@ -52,14 +51,17 @@ function getCSS(
 
 export function getPreflights(
   selectorProse: string,
-  className: string
+  className: string,
+  cssExtend?: object | undefined
 ): string {
   // attribute selector
   if (!selectorProse.startsWith('[')) {
     selectorProse = '.' + selectorProse
   }
 
-  let css = getCSS(selectorProse, className, DEFAULT)
+  if (cssExtend) {
+    return getCSS(selectorProse, className, mergeDeep(DEFAULT, cssExtend))
+  }
 
-  return css
+  return getCSS(selectorProse, className, DEFAULT)
 }

@@ -1,8 +1,3 @@
-/* layer: default */
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
 /* layer: typography */
 .prose :where(h1, h2, h3, h4, h5, h6):not(.not-prose) {
   color: var(--uno-prose-headings);
@@ -54,7 +49,7 @@
   font-size: 0.875em;
 }
 .prose :where(code):not(.not-prose) {
-  color: var(--uno-prose-code);
+  color: #8b5cf6;
   font-size: 0.875em;
   font-weight: 600;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -134,45 +129,13 @@
   cursor: pointer;
   font-weight: 600;
 }
+.prose :where(a):not(.not-prose):hover {
+  color: #f43f5e;
+}
+.prose :where(a):not(.not-prose):visited {
+  color: #14b8a6;
+}
 .prose {
   color: var(--uno-prose-body);
   max-width: 65ch;
-}
-.prose-teal {
-  --uno-prose-body: #0f766e;
-  --uno-prose-headings: #134e4a;
-  --uno-prose-lead: #0d9488;
-  --uno-prose-links: #134e4a;
-  --uno-prose-bold: #134e4a;
-  --uno-prose-counters: #14b8a6;
-  --uno-prose-bullets: #5eead4;
-  --uno-prose-hr: #99f6e4;
-  --uno-prose-quotes: #134e4a;
-  --uno-prose-quote-borders: #99f6e4;
-  --uno-prose-captions: #14b8a6;
-  --uno-prose-code: #134e4a;
-  --uno-prose-pre-code: #99f6e4;
-  --uno-prose-pre-bg: #115e59;
-  --uno-prose-th-borders: #5eead4;
-  --uno-prose-td-borders: #99f6e4;
-  --uno-prose-tr-bg: #ccfbf1;
-}
-.dark .dark\:prose-invert {
-  --uno-prose-body: #5eead4;
-  --uno-prose-headings: #fff;
-  --uno-prose-lead: #2dd4bf;
-  --uno-prose-links: #fff;
-  --uno-prose-bold: #fff;
-  --uno-prose-counters: #2dd4bf;
-  --uno-prose-bullets: #0d9488;
-  --uno-prose-hr: #0f766e;
-  --uno-prose-quotes: #ccfbf1;
-  --uno-prose-quote-borders: #0f766e;
-  --uno-prose-captions: #2dd4bf;
-  --uno-prose-code: #fff;
-  --uno-prose-pre-code: #5eead4;
-  --uno-prose-pre-bg: rgb(0 0 0 / 50%);
-  --uno-prose-th-borders: #0d9488;
-  --uno-prose-td-borders: #0f766e;
-  --uno-prose-tr-bg: #115e59;
 }

@@ -11,7 +11,19 @@ export default defineConfig({
         presetAttributify(),
         presetIcons(),
         presetUno(),
-        presetTypography()
+        presetTypography({
+          cssExtend: {
+            code: {
+              color: '#8b5cf6'
+            },
+            'a:hover': {
+              color: '#f43f5e'
+            },
+            'a:visited': {
+              color: '#14b8a6'
+            }
+          }
+        })
       ]
     })
   ],

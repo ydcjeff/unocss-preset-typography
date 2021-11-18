@@ -37,6 +37,25 @@ const testConfigs = [
     name: 'prose-attribute-custom',
     input: '<main custom text-base custom-teal dark="custom-invert"></main>',
     typographyOptions: { className: 'custom' }
+  },
+
+  // custom css test
+  {
+    name: 'prose-custom-css',
+    input: 'prose',
+    typographyOptions: {
+      cssExtend: {
+        code: {
+          color: '#8b5cf6'
+        },
+        'a:hover': {
+          color: '#f43f5e'
+        },
+        'a:visited': {
+          color: '#14b8a6'
+        }
+      }
+    }
   }
 ]
 

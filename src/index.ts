@@ -1,15 +1,27 @@
-import { Preset } from 'unocss'
+import { Preset, CSSObject } from 'unocss'
 import { getPreflights } from './preflights'
 
-interface TypographyOptions {
+/**
+ * @public
+ */
+export interface TypographyOptions {
   /**
    * The class name to use the typographic utilities.
    * Not to apply the styles to the elements, use it like
    * `not-${className}` which is by default `not-prose`.
    *
+   * Note: `not` utility is only usable in class.
+   *
    * @defaultValue `prose`
    */
   className?: string
+
+  /**
+   * Extend or override CSS selectors with CSS declarations.
+   *
+   * @defaultValue undefined
+   */
+  cssExtend?: Record<string, CSSObject>
 }
 
 /**
@@ -41,7 +53,8 @@ export function presetTypography(options?: TypographyOptions): Preset {
   const colorsRE = new RegExp(
     `${className}-(rose|pink|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime|yellow|amber|orange|red|warmgray|truegray|gray|coolgray|bluegray)`
   )
-  const invertRE = new RegExp(`${className}-invert`)
+  const invertRE = new RegExp(`^${className}-invert$`)
+  const cssExtend = options?.cssExtend
 
   return {
     name: 'unocss-preset-typography',
@@ -114,7 +127,9 @@ export function presetTypography(options?: TypographyOptions): Preset {
       {
         layer: 'typography',
         getCSS: () =>
-          hasProseClass ? getPreflights(selectorProse, className) : undefined
+          hasProseClass
+            ? getPreflights(selectorProse, className, cssExtend)
+            : undefined
       }
     ]
   }

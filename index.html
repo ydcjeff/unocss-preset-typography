@@ -13,7 +13,7 @@
   </head>
 
   <body class="bg-white font-sans m-0 py-6 px-4 antialiased dark:bg-dark-800">
-    <main class="mx-auto text-base prose prose-truegray dark:prose-invert">
+    <main class="mx-auto text-base prose-truegray" dark="prose-invert" prose>
       <button
         un-m="b-4"
         un-p="x-2 y-2"
@@ -62,7 +62,7 @@
       shiki
         .getHighlighter({
           theme: 'material-palenight',
-          langs: ['html', 'sh', 'js']
+          langs: ['html', 'sh', 'js', 'ts']
         })
         .then((hl) => {
           for (const block of preBlocks) {
