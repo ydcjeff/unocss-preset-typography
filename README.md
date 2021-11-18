@@ -14,7 +14,7 @@
 
 > Typography Preset for UnoCSS
 
-Installation:
+## Installation
 
 ```sh
 npm i unocss-preset-typography unocss --save-dev # with npm
@@ -22,7 +22,7 @@ yarn add unocss-preset-typography unocss -D # with yarn
 pnpm add unocss-preset-typography unocss -D # with pnpm
 ```
 
-Usage:
+## Usage
 
 ```js
 // unocss.config.js
