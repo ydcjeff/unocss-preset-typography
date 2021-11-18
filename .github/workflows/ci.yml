@@ -24,3 +24,19 @@ jobs:
       - run: pnpm install
       - run: pnpm run build
       - run: pnpm run test
+
+  codeql:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['javascript', 'typescript']
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: github/codeql-action/init@v1
+        with:
+          languages: ${{ matrix.language }}
+
+      - uses: github/codeql-action/analyze@v1
