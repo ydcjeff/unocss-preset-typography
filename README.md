@@ -80,27 +80,46 @@ export default defineConfig({
 
 ## Highlight
 
-- Almost same styles as TailwindCSS/WindiCSS Typography.
+- **Any font size you want**
 
-- `prose` does not have any color by default, instead use any color supported by
-  UnoCSS for theme color (for e.g. `prose-coolgray`, `prose-sky`)
-  with the exception of `black`, `white`, `light`, and `dark`.
+  Apply any font size for body you like and `prose` will scale the styles
+  for the respective HTML elements. For instance, `prose text-lg` has body font
+  size `1.125rem` and `h1` will with scale with that size 2.25 times.
+  See [all the supported HTML elements].
 
-- Use `prose-invert` for typographic dark mode (background color needs to be handled by users).
+  [all the supported html elements]: https://github.com/ydcjeff/unocss-preset-typography/blob/main/src/preflights/default.ts
 
-- No style resetting, styles outside of `prose` will stay the same.
+- **Any color you like**
 
-- Apply `not-prose` to the elements that you don't want the typographic styles to apply.
+  Apply any color with `prose-${colorName}` by UnoCSS (e.g. `prose-coolgray`,
+  `prose-sky`) since `prose` does not have any color by default.
+  See [available colors](#colors). For instance, `prose prose-truegray` will
+  use the respective colors for the respective HTML elements.
+
+- **Dark mode in ONE utility**
+
+  Apply typographic dark mode with `prose-invert` (background color needs to be
+  handled by users). For instance, `prose dark:prose-invert` will use the
+  inverted colors in the dark mode.
+
+- **Your own style, still your style**
+
+  Styles of elements not within `prose` will stay the same. No style resetting
+  just like UnoCSS.
+
+- **Undo with `not` utility**
+
+  Apply `not-prose` to the elements to undo the typographic styles.
+  For instance, `<table class="not-prose">` will skip the styles by this preset
+  for the `table` element **(NOTE: `not` utility is only usable in class)**.
 
 ## Utilities
 
-| Rules       | Body font size  |
-| ----------- | --------------- |
-| `prose-sm`  | 0.875rem (14px) |
-| `prose`     | 1rem (16px)     |
-| `prose-lg`  | 1.125rem (18px) |
-| `prose-xl`  | 1.25rem (20px)  |
-| `prose-2xl` | 1.5rem (24px)   |
+|  Rule   |                                            Styles by this rule                                            |
+| :-----: | :-------------------------------------------------------------------------------------------------------: |
+| `prose` | See [on GitHub](https://github.com/ydcjeff/unocss-preset-typography/blob/main/src/preflights/default.ts). |
+
+### Colors
 
 | Rules (color)    |
 | ---------------- |
