@@ -59,7 +59,7 @@ export function presetTypography(options?: TypographyOptions): Preset {
   return {
     name: 'unocss-preset-typography',
     enforce: 'post',
-    layers: { typography: 8 },
+    layers: { typography: -1 },
     rules: [
       [
         classNameRE,
