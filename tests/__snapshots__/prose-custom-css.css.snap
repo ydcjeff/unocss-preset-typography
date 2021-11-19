@@ -20,7 +20,7 @@
   margin: 1em 0;
   padding-left: 1em;
   font-style: italic;
-  border-left: 0.25em solid var(--uno-prose-quote-borders);
+  border-left: 0.25em solid var(--uno-prose-borders);
 }
 .prose :where(h1):not(.not-prose) {
   margin: 1rem 0;
@@ -90,7 +90,7 @@
 .prose :where(ol > li):not(.not-prose)::marker,
 .prose :where(ul > li):not(.not-prose)::marker,
 .prose :where(summary):not(.not-prose)::marker {
-  color: var(--uno-prose-counters);
+  color: var(--uno-prose-lists);
 }
 .prose :where(hr):not(.not-prose) {
   margin: 2em 0;
@@ -103,10 +103,10 @@
   overflow-x: auto;
 }
 .prose :where(tr):not(.not-prose):nth-child(2n) {
-  background-color: var(--uno-prose-tr-bg);
+  background: var(--uno-prose-bg-soft);
 }
 .prose :where(td, th):not(.not-prose) {
-  border: 1px solid var(--uno-prose-td-borders);
+  border: 1px solid var(--uno-prose-borders);
   padding: 0.625em 1em;
 }
 .prose :where(abbr):not(.not-prose) {
@@ -122,7 +122,7 @@
 .prose :where(details):not(.not-prose) {
   margin: 1em 0;
   padding: 1.25rem 1.5rem;
-  background: var(--uno-prose-tr-bg);
+  background: var(--uno-prose-bg-soft);
   border-left: 0.5em solid;
 }
 .prose :where(summary):not(.not-prose) {

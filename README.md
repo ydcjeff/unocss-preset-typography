@@ -93,7 +93,7 @@ export default defineConfig({
 
   Apply any color with `prose-${colorName}` by UnoCSS (e.g. `prose-coolgray`,
   `prose-sky`) since `prose` does not have any color by default.
-  See [available colors](#colors). For instance, `prose prose-truegray` will
+  See [all available colors](#colors). For instance, `prose prose-truegray` will
   use the respective colors for the respective HTML elements.
 
 - **Dark mode in ONE utility**
@@ -111,7 +111,9 @@ export default defineConfig({
 
   Apply `not-prose` to the elements to undo the typographic styles.
   For instance, `<table class="not-prose">` will skip the styles by this preset
-  for the `table` element **(NOTE: `not` utility is only usable in class)**.
+  for the `table` element
+  **(NOTE: `not` utility is only usable in class since it is only used in CSS**
+  **selector & not scanned by UnoCSS)**.
 
 ## Utilities
 
@@ -157,21 +159,23 @@ The CSS declarations passed to `cssExtend` will
 
 - **be merged** deeply with built-in styles.
 
+### Type of `TypographyOptions`
+
 ```ts
 export interface TypographyOptions {
   /**
    * The class name to use the typographic utilities.
-   * Not to apply the styles to the elements, use it like
+   * To undo the styles to the elements, use it like
    * `not-${className}` which is by default `not-prose`.
    *
-   * Note: `not` utility is only usable in class.
+   * Note: `not` utility is only available in class.
    *
    * @defaultValue `prose`
    */
   className?: string
 
   /**
-   * Extend or override CSS selectors with CSS declarations.
+   * Extend or override CSS selectors with CSS declaration block.
    *
    * @defaultValue undefined
    */
@@ -192,6 +196,8 @@ export default defineConfig({
     presetUno(), // required
     presetTypography({
       className: 'markdown', // now use like `markdown markdown-gray`, `not-markdown`
+      // cssExtend is an object with CSS selector as key and
+      // CSS declaration block as value like writing normal CSS.
       cssExtend: {
         code: {
           color: '#8b5cf6'

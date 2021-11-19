@@ -9,7 +9,7 @@ function getCSS(
   let css = ''
 
   for (const selector in preflights) {
-    const cssDeclarations = preflights[selector]
+    const cssDeclarationBlock = preflights[selector]
 
     // since pseudo class & elements can't be matched
     // within single :where(), they are splitted and rejoined.
@@ -39,8 +39,8 @@ function getCSS(
 
     css += '{'
 
-    for (const k in cssDeclarations) {
-      const v = cssDeclarations[k]
+    for (const k in cssDeclarationBlock) {
+      const v = cssDeclarationBlock[k]
       css += `${k}:${v};`
     }
 

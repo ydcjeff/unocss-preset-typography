@@ -20,7 +20,7 @@ export const DEFAULT = {
     margin: '1em 0',
     'padding-left': '1em',
     'font-style': 'italic',
-    'border-left': '.25em solid var(--uno-prose-quote-borders)'
+    'border-left': '.25em solid var(--uno-prose-borders)'
   },
   // taking 16px as a base, we scale h1, h2, h3, and h4 like
   // 16 (base) > 18 (h4) > 22 (h3) > 28 (h2) > 36 (h1)
@@ -89,7 +89,7 @@ export const DEFAULT = {
     'list-style-type': 'disc'
   },
   'ol > li::marker,ul > li::marker,summary::marker': {
-    color: 'var(--uno-prose-counters)'
+    color: 'var(--uno-prose-lists)'
   },
   hr: {
     margin: '2em 0',
@@ -102,10 +102,10 @@ export const DEFAULT = {
     'overflow-x': 'auto'
   },
   'tr:nth-child(2n)': {
-    'background-color': 'var(--uno-prose-tr-bg)'
+    background: 'var(--uno-prose-bg-soft)'
   },
   'td,th': {
-    border: '1px solid var(--uno-prose-td-borders)',
+    border: '1px solid var(--uno-prose-borders)',
     padding: '.625em 1em'
   },
   abbr: {
@@ -121,7 +121,7 @@ export const DEFAULT = {
   details: {
     margin: '1em 0',
     padding: '1.25rem 1.5rem',
-    background: 'var(--uno-prose-tr-bg)',
+    background: 'var(--uno-prose-bg-soft)',
     'border-left': '.5em solid'
   },
   summary: {

@@ -1,8 +1,3 @@
-/* layer: default */
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
 /* layer: typography */
 .prose :where(h1, h2, h3, h4, h5, h6):not(.not-prose) {
   color: var(--uno-prose-headings);
@@ -25,7 +20,7 @@
   margin: 1em 0;
   padding-left: 1em;
   font-style: italic;
-  border-left: 0.25em solid var(--uno-prose-quote-borders);
+  border-left: 0.25em solid var(--uno-prose-borders);
 }
 .prose :where(h1):not(.not-prose) {
   margin: 1rem 0;
@@ -95,7 +90,7 @@
 .prose :where(ol > li):not(.not-prose)::marker,
 .prose :where(ul > li):not(.not-prose)::marker,
 .prose :where(summary):not(.not-prose)::marker {
-  color: var(--uno-prose-counters);
+  color: var(--uno-prose-lists);
 }
 .prose :where(hr):not(.not-prose) {
   margin: 2em 0;
@@ -108,10 +103,10 @@
   overflow-x: auto;
 }
 .prose :where(tr):not(.not-prose):nth-child(2n) {
-  background-color: var(--uno-prose-tr-bg);
+  background: var(--uno-prose-bg-soft);
 }
 .prose :where(td, th):not(.not-prose) {
-  border: 1px solid var(--uno-prose-td-borders);
+  border: 1px solid var(--uno-prose-borders);
   padding: 0.625em 1em;
 }
 .prose :where(abbr):not(.not-prose) {
@@ -127,7 +122,7 @@
 .prose :where(details):not(.not-prose) {
   margin: 1em 0;
   padding: 1.25rem 1.5rem;
-  background: var(--uno-prose-tr-bg);
+  background: var(--uno-prose-bg-soft);
   border-left: 0.5em solid;
 }
 .prose :where(summary):not(.not-prose) {
@@ -141,38 +136,36 @@
 .prose-teal {
   --uno-prose-body: #0f766e;
   --uno-prose-headings: #134e4a;
-  --uno-prose-lead: #0d9488;
   --uno-prose-links: #134e4a;
-  --uno-prose-bold: #134e4a;
-  --uno-prose-counters: #14b8a6;
-  --uno-prose-bullets: #5eead4;
+  --uno-prose-lists: #2dd4bf;
   --uno-prose-hr: #99f6e4;
-  --uno-prose-quotes: #134e4a;
-  --uno-prose-quote-borders: #99f6e4;
   --uno-prose-captions: #14b8a6;
   --uno-prose-code: #134e4a;
-  --uno-prose-pre-code: #99f6e4;
-  --uno-prose-pre-bg: #115e59;
-  --uno-prose-th-borders: #5eead4;
-  --uno-prose-td-borders: #99f6e4;
-  --uno-prose-tr-bg: #ccfbf1;
+  --uno-prose-borders: #99f6e4;
+  --uno-prose-bg-soft: #ccfbf1;
+  --uno-prose-invert-body: #99f6e4;
+  --uno-prose-invert-headings: #ccfbf1;
+  --uno-prose-invert-links: #ccfbf1;
+  --uno-prose-invert-lists: #14b8a6;
+  --uno-prose-invert-hr: #0f766e;
+  --uno-prose-invert-captions: #2dd4bf;
+  --uno-prose-invert-code: #ccfbf1;
+  --uno-prose-invert-borders: #0f766e;
+  --uno-prose-invert-bg-soft: #115e59;
 }
 .dark .dark\:prose-invert {
-  --uno-prose-body: #5eead4;
-  --uno-prose-headings: #fff;
-  --uno-prose-lead: #2dd4bf;
-  --uno-prose-links: #fff;
-  --uno-prose-bold: #fff;
-  --uno-prose-counters: #2dd4bf;
-  --uno-prose-bullets: #0d9488;
-  --uno-prose-hr: #0f766e;
-  --uno-prose-quotes: #ccfbf1;
-  --uno-prose-quote-borders: #0f766e;
-  --uno-prose-captions: #2dd4bf;
-  --uno-prose-code: #fff;
-  --uno-prose-pre-code: #5eead4;
-  --uno-prose-pre-bg: rgb(0 0 0 / 50%);
-  --uno-prose-th-borders: #0d9488;
-  --uno-prose-td-borders: #0f766e;
-  --uno-prose-tr-bg: #115e59;
+  --uno-prose-body: var(--uno-prose-invert-body);
+  --uno-prose-headings: var(--uno-prose-invert-headings);
+  --uno-prose-links: var(--uno-prose-invert-links);
+  --uno-prose-lists: var(--uno-prose-invert-lists);
+  --uno-prose-hr: var(--uno-prose-invert-hr);
+  --uno-prose-captions: var(--uno-prose-invert-captions);
+  --uno-prose-code: var(--uno-prose-invert-code);
+  --uno-prose-borders: var(--uno-prose-invert-borders);
+  --uno-prose-bg-soft: var(--uno-prose-invert-bg-soft);
+}
+/* layer: default */
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }

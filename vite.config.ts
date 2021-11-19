@@ -17,7 +17,8 @@ export default defineConfig({
               color: '#8b5cf6'
             },
             'a:hover': {
-              color: '#f43f5e'
+              color: '#f43f5e',
+              'text-decoration': 'none'
             },
             'a:visited': {
               color: '#14b8a6'
