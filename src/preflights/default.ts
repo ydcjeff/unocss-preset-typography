@@ -62,7 +62,6 @@ export const DEFAULT = {
   },
   pre: {
     padding: '1.25rem 1.5rem',
-    margin: 0,
     'overflow-x': 'auto',
     'border-radius': '.375rem'
   },
