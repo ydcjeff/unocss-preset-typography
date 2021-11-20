@@ -12,7 +12,7 @@
 [prose=''] :where(a code):not(.not-prose) {
   color: var(--uno-prose-links);
 }
-[prose=''] :where(p, ul, ol):not(.not-prose) {
+[prose=''] :where(p, ul, ol, pre):not(.not-prose) {
   margin: 1em 0;
   line-height: 1.75;
 }

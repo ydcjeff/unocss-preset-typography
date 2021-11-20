@@ -12,7 +12,7 @@ export const DEFAULT = {
   'a code': {
     color: 'var(--uno-prose-links)'
   },
-  'p,ul,ol': {
+  'p,ul,ol,pre': {
     margin: '1em 0',
     'line-height': 1.75
   },

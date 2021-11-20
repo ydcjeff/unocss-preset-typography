@@ -12,7 +12,7 @@
 .custom :where(a code):not(.not-custom) {
   color: var(--uno-prose-links);
 }
-.custom :where(p, ul, ol):not(.not-custom) {
+.custom :where(p, ul, ol, pre):not(.not-custom) {
   margin: 1em 0;
   line-height: 1.75;
 }
