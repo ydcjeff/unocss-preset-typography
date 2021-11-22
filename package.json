@@ -1,6 +1,6 @@
 {
   "name": "unocss-preset-typography",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Typography Preset for UnoCSS",
   "engines": {
     "node": ">=14.18"
