@@ -50,7 +50,7 @@ export function presetTypography(options?: TypographyOptions): Preset {
   const className = options?.className || 'prose'
   const classNameRE = new RegExp(`^${className}$`)
   const colorsRE = new RegExp(
-    `^${className}-(rose|pink|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime|yellow|amber|orange|red|warmgray|truegray|gray|coolgray|bluegray)$`
+    `^${className}-(rose|pink|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime|yellow|amber|orange|red|gray|slate|zinc|neutral|stone)$`
   )
   const invertRE = new RegExp(`^${className}-invert$`)
   const cssExtend = options?.cssExtend

@@ -123,30 +123,30 @@ export default defineConfig({
 
 ### Colors
 
-| Rules (color)    |
-| ---------------- |
-| `prose-rose`     |
-| `prose-pink`     |
-| `prose-fuchsia`  |
-| `prose-purple`   |
-| `prose-violet`   |
-| `prose-indigo`   |
-| `prose-blue`     |
-| `prose-sky`      |
-| `prose-cyan`     |
-| `prose-teal`     |
-| `prose-emerald`  |
-| `prose-green`    |
-| `prose-lime`     |
-| `prose-yellow`   |
-| `prose-amber`    |
-| `prose-orange`   |
-| `prose-red`      |
-| `prose-warmgray` |
-| `prose-truegray` |
-| `prose-gray`     |
-| `prose-coolgray` |
-| `prose-bluegray` |
+| Rules (color)   |
+| --------------- |
+| `prose-rose`    |
+| `prose-pink`    |
+| `prose-fuchsia` |
+| `prose-purple`  |
+| `prose-violet`  |
+| `prose-indigo`  |
+| `prose-blue`    |
+| `prose-sky`     |
+| `prose-cyan`    |
+| `prose-teal`    |
+| `prose-emerald` |
+| `prose-green`   |
+| `prose-lime`    |
+| `prose-yellow`  |
+| `prose-amber`   |
+| `prose-orange`  |
+| `prose-red`     |
+| `prose-gray`    |
+| `prose-slate`   |
+| `prose-zinc`    |
+| `prose-neutral` |
+| `prose-stone`   |
 
 ## Configurations
 
