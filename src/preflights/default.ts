@@ -2,68 +2,68 @@ export const DEFAULT = {
   'h1,h2,h3,h4,h5,h6': {
     color: 'var(--uno-prose-headings)',
     'font-weight': '600',
-    'line-height': 1.25
+    'line-height': 1.25,
   },
   a: {
     color: 'var(--uno-prose-links)',
     'text-decoration': 'underline',
-    'font-weight': '500'
+    'font-weight': '500',
   },
   'a code': {
-    color: 'var(--uno-prose-links)'
+    color: 'var(--uno-prose-links)',
   },
   'p,ul,ol,pre': {
     margin: '1em 0',
-    'line-height': 1.75
+    'line-height': 1.75,
   },
   blockquote: {
     margin: '1em 0',
     'padding-left': '1em',
     'font-style': 'italic',
-    'border-left': '.25em solid var(--uno-prose-borders)'
+    'border-left': '.25em solid var(--uno-prose-borders)',
   },
   // taking 16px as a base, we scale h1, h2, h3, and h4 like
   // 16 (base) > 18 (h4) > 22 (h3) > 28 (h2) > 36 (h1)
   h1: {
     margin: '1rem 0', // h1 is always at the top of the page, so only margin 1 * root font size
-    'font-size': '2.25em'
+    'font-size': '2.25em',
   },
   h2: {
     margin: '1.75em 0 .5em',
-    'font-size': '1.75em'
+    'font-size': '1.75em',
   },
   h3: {
     margin: '1.5em 0 .5em',
-    'font-size': '1.375em'
+    'font-size': '1.375em',
   },
   h4: {
     margin: '1em 0',
-    'font-size': '1.125em'
+    'font-size': '1.125em',
   },
   'img,video': {
-    'max-width': '100%'
+    'max-width': '100%',
   },
   'figure,picture': {
-    margin: '1em 0'
+    margin: '1em 0',
   },
   figcaption: {
     color: 'var(--uno-prose-captions)',
-    'font-size': '.875em'
+    'font-size': '.875em',
   },
   code: {
     color: 'var(--uno-prose-code)',
     'font-size': '.875em',
     'font-weight': 600,
     'font-family':
-      'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation-Mono,Courier-New,monospace'
+      'ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation-Mono,Courier-New,monospace',
   },
   ':not(pre) > code::before,:not(pre) > code::after': {
-    content: '"`"'
+    content: '"`"',
   },
   pre: {
     padding: '1.25rem 1.5rem',
     'overflow-x': 'auto',
-    'border-radius': '.375rem'
+    'border-radius': '.375rem',
   },
   'pre,code': {
     'white-space': 'pre',
@@ -76,55 +76,55 @@ export const DEFAULT = {
     '-webkit-hyphens': 'none',
     '-moz-hyphens': 'none',
     hyphens: 'none',
-    background: 'transparent'
+    background: 'transparent',
   },
   'pre code': {
-    'font-weight': 'inherit'
+    'font-weight': 'inherit',
   },
   'ol,ul': {
-    'padding-left': '1.25em'
+    'padding-left': '1.25em',
   },
   ul: {
-    'list-style-type': 'disc'
+    'list-style-type': 'disc',
   },
   'ol > li::marker,ul > li::marker,summary::marker': {
-    color: 'var(--uno-prose-lists)'
+    color: 'var(--uno-prose-lists)',
   },
   hr: {
     margin: '2em 0',
-    border: '1px solid var(--uno-prose-hr)'
+    border: '1px solid var(--uno-prose-hr)',
   },
   table: {
     display: 'block',
     margin: '1em 0',
     'border-collapse': 'collapse',
-    'overflow-x': 'auto'
+    'overflow-x': 'auto',
   },
   'tr:nth-child(2n)': {
-    background: 'var(--uno-prose-bg-soft)'
+    background: 'var(--uno-prose-bg-soft)',
   },
   'td,th': {
     border: '1px solid var(--uno-prose-borders)',
-    padding: '.625em 1em'
+    padding: '.625em 1em',
   },
   abbr: {
-    cursor: 'help'
+    cursor: 'help',
   },
   kbd: {
     color: 'var(--uno-prose-code)',
     border: '1px solid',
     padding: '.25rem .5rem',
     'font-size': '.875em',
-    'border-radius': '.25rem'
+    'border-radius': '.25rem',
   },
   details: {
     margin: '1em 0',
     padding: '1.25rem 1.5rem',
     background: 'var(--uno-prose-bg-soft)',
-    'border-left': '.5em solid'
+    'border-left': '.5em solid',
   },
   summary: {
     cursor: 'pointer',
-    'font-weight': '600'
-  }
+    'font-weight': '600',
+  },
 }

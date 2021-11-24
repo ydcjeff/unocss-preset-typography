@@ -32,6 +32,7 @@
     "@microsoft/api-extractor": "^7.18.19",
     "@types/estree": "^0.0.50",
     "@types/node": "^16.11.9",
+    "@ydcjeff/prettier-config": "^1.2.0",
     "marked": "^4.0.4",
     "prettier": "^2.4.1",
     "typescript": "^4.5.2",
@@ -42,13 +43,7 @@
   "peerDependencies": {
     "unocss": "^0.12.1"
   },
-  "prettier": {
-    "semi": false,
-    "tabWidth": 2,
-    "singleQuote": true,
-    "printWidth": 80,
-    "trailingComma": "none"
-  },
+  "prettier": "@ydcjeff/prettier-config",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ydcjeff/unocss-preset-typography.git"

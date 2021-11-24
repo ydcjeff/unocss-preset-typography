@@ -15,28 +15,28 @@ const testConfigs = [
   {
     name: 'prose-class',
     input: 'prose text-base prose-teal dark:prose-invert',
-    typographyOptions: {}
+    typographyOptions: {},
   },
 
   // custom prose test
   {
     name: 'prose-class-custom',
     input: 'custom text-base custom-teal dark:custom-invert',
-    typographyOptions: { className: 'custom' }
+    typographyOptions: { className: 'custom' },
   },
 
   // prose attribute test
   {
     name: 'prose-attribute',
     input: '<main prose text-base prose-teal dark="prose-invert"></main>',
-    typographyOptions: {}
+    typographyOptions: {},
   },
 
   // custom prose attribute test
   {
     name: 'prose-attribute-custom',
     input: '<main custom text-base custom-teal dark="custom-invert"></main>',
-    typographyOptions: { className: 'custom' }
+    typographyOptions: { className: 'custom' },
   },
 
   // custom css test
@@ -46,17 +46,17 @@ const testConfigs = [
     typographyOptions: {
       cssExtend: {
         code: {
-          color: '#8b5cf6'
+          color: '#8b5cf6',
         },
         'a:hover': {
-          color: '#f43f5e'
+          color: '#f43f5e',
         },
         'a:visited': {
-          color: '#14b8a6'
-        }
-      }
-    }
-  }
+          color: '#14b8a6',
+        },
+      },
+    },
+  },
 ]
 
 for (const tc of testConfigs) {
@@ -65,8 +65,8 @@ for (const tc of testConfigs) {
       presets: [
         presetAttributify(),
         presetUno(),
-        presetTypography(tc.typographyOptions)
-      ]
+        presetTypography(tc.typographyOptions),
+      ],
     })
 
     let { css } = await generator.generate(tc.input)
@@ -76,7 +76,7 @@ for (const tc of testConfigs) {
       singleQuote: true,
       printWidth: 80,
       trailingComma: 'none',
-      parser: 'css'
+      parser: 'css',
     })
     const expected = genSnapshot(css, tc.name, update)
 

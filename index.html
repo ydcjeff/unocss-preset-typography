@@ -52,7 +52,7 @@
       }
 
       document.getElementById('demo').innerHTML = marked.parse(readme, {
-        langPrefix: ''
+        langPrefix: '',
       })
 
       document.getElementById('toggle').addEventListener('click', (e) => {
@@ -65,13 +65,13 @@
       shiki
         .getHighlighter({
           theme: 'material-palenight',
-          langs: ['html', 'sh', 'js', 'ts']
+          langs: ['html', 'sh', 'js', 'ts'],
         })
         .then((hl) => {
           for (const block of preBlocks) {
             block.outerHTML = hl.codeToHtml(
               block.textContent,
-              block.firstElementChild.className || 'text'
+              block.firstElementChild.className || 'text',
             )
           }
         })

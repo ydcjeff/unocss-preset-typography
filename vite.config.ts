@@ -14,19 +14,19 @@ export default defineConfig({
         presetTypography({
           cssExtend: {
             code: {
-              color: '#8b5cf6'
+              color: '#8b5cf6',
             },
             'a:hover': {
               color: '#f43f5e',
-              'text-decoration': 'none'
+              'text-decoration': 'none',
             },
             'a:visited': {
-              color: '#14b8a6'
-            }
-          }
-        })
-      ]
-    })
+              color: '#14b8a6',
+            },
+          },
+        }),
+      ],
+    }),
   ],
   build: {
     minify: process.env.DEMO === 'demo',
@@ -35,10 +35,10 @@ export default defineConfig({
       : {
           entry: './src/index.ts',
           formats: ['es', 'cjs'],
-          fileName: (fmt: string) => 'index' + (fmt === 'es' ? `.js` : `.cjs`)
+          fileName: (fmt: string) => 'index' + (fmt === 'es' ? `.js` : `.cjs`),
         },
     rollupOptions: {
-      external: ['unocss']
-    }
-  }
+      external: ['unocss'],
+    },
+  },
 })

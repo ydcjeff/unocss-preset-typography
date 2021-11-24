@@ -50,7 +50,7 @@ export function presetTypography(options?: TypographyOptions): Preset {
   const className = options?.className || 'prose'
   const classNameRE = new RegExp(`^${className}$`)
   const colorsRE = new RegExp(
-    `^${className}-(rose|pink|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime|yellow|amber|orange|red|gray|slate|zinc|neutral|stone)$`
+    `^${className}-(rose|pink|fuchsia|purple|violet|indigo|blue|sky|cyan|teal|emerald|green|lime|yellow|amber|orange|red|gray|slate|zinc|neutral|stone)$`,
   )
   const invertRE = new RegExp(`^${className}-invert$`)
   const cssExtend = options?.cssExtend
@@ -67,7 +67,7 @@ export function presetTypography(options?: TypographyOptions): Preset {
           selectorProse = rawSelector
           return { color: 'var(--uno-prose-body)', 'max-width': '65ch' }
         },
-        { layer: 'typography' }
+        { layer: 'typography' },
       ],
       [
         colorsRE,
@@ -92,10 +92,10 @@ export function presetTypography(options?: TypographyOptions): Preset {
             '--uno-prose-invert-captions': theme['colors'][color][400],
             '--uno-prose-invert-code': theme['colors'][color][100],
             '--uno-prose-invert-borders': theme['colors'][color][700],
-            '--uno-prose-invert-bg-soft': theme['colors'][color][800]
+            '--uno-prose-invert-bg-soft': theme['colors'][color][800],
           }
         },
-        { layer: 'typography' }
+        { layer: 'typography' },
       ],
       [
         invertRE,
@@ -109,11 +109,11 @@ export function presetTypography(options?: TypographyOptions): Preset {
             '--uno-prose-captions': 'var(--uno-prose-invert-captions)',
             '--uno-prose-code': 'var(--uno-prose-invert-code)',
             '--uno-prose-borders': 'var(--uno-prose-invert-borders)',
-            '--uno-prose-bg-soft': 'var(--uno-prose-invert-bg-soft)'
+            '--uno-prose-bg-soft': 'var(--uno-prose-invert-bg-soft)',
           }
         },
-        { layer: 'typography' }
-      ]
+        { layer: 'typography' },
+      ],
     ],
     preflights: [
       {
@@ -121,8 +121,8 @@ export function presetTypography(options?: TypographyOptions): Preset {
         getCSS: () =>
           hasProseClass
             ? getPreflights(selectorProse, className, cssExtend)
-            : undefined
-      }
-    ]
+            : undefined,
+      },
+    ],
   }
 }

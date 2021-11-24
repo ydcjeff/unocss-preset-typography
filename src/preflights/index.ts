@@ -4,7 +4,7 @@ import { DEFAULT } from './default'
 function getCSS(
   selectorProse: string,
   className: string,
-  preflights: object
+  preflights: object,
 ): string {
   let css = ''
 
@@ -52,7 +52,7 @@ function getCSS(
 export function getPreflights(
   selectorProse: string,
   className: string,
-  cssExtend?: object | undefined
+  cssExtend?: object | undefined,
 ): string {
   // attribute selector
   if (!selectorProse.startsWith('[')) {

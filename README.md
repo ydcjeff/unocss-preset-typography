@@ -33,8 +33,8 @@ export default defineConfig({
   presets: [
     presetAttributify(), // required if using attributify mode
     presetUno(), // required
-    presetTypography()
-  ]
+    presetTypography(),
+  ],
 })
 ```
 
@@ -82,19 +82,20 @@ export default defineConfig({
 
 - **Any font size you want**
 
-  Apply any font size for body you like and `prose` will scale the styles
-  for the respective HTML elements. For instance, `prose text-lg` has body font
-  size `1.125rem` and `h1` will with scale with that size 2.25 times.
-  See [all the supported HTML elements].
+  Apply any font size for body you like and `prose` will scale the styles for
+  the respective HTML elements. For instance, `prose text-lg` has body font size
+  `1.125rem` and `h1` will with scale with that size 2.25 times. See [all the
+  supported HTML elements].
 
-  [all the supported html elements]: https://github.com/ydcjeff/unocss-preset-typography/blob/main/src/preflights/default.ts
+  [all the supported html elements]:
+    https://github.com/ydcjeff/unocss-preset-typography/blob/main/src/preflights/default.ts
 
 - **Any color you like**
 
   Apply any color with `prose-${colorName}` by UnoCSS (e.g. `prose-coolgray`,
-  `prose-sky`) since `prose` does not have any color by default.
-  See [all available colors](#colors). For instance, `prose prose-truegray` will
-  use the respective colors for the respective HTML elements.
+  `prose-sky`) since `prose` does not have any color by default. See
+  [all available colors](#colors). For instance, `prose prose-truegray` will use
+  the respective colors for the respective HTML elements.
 
 - **Dark mode in ONE utility**
 
@@ -109,11 +110,10 @@ export default defineConfig({
 
 - **Undo with `not` utility**
 
-  Apply `not-prose` to the elements to undo the typographic styles.
-  For instance, `<table class="not-prose">` will skip the styles by this preset
-  for the `table` element
-  **(NOTE: `not` utility is only usable in class since it is only used in CSS**
-  **selector & not scanned by UnoCSS)**.
+  Apply `not-prose` to the elements to undo the typographic styles. For
+  instance, `<table class="not-prose">` will skip the styles by this preset for
+  the `table` element **(NOTE: `not` utility is only usable in class since it is
+  only used in CSS** **selector & not scanned by UnoCSS)**.
 
 ## Utilities
 
@@ -150,8 +150,8 @@ export default defineConfig({
 
 ## Configurations
 
-This preset has `className` and `cssExtend` configurations for users who
-like to override or extend.
+This preset has `className` and `cssExtend` configurations for users who like to
+override or extend.
 
 The CSS declarations passed to `cssExtend` will
 
@@ -200,17 +200,17 @@ export default defineConfig({
       // CSS declaration block as value like writing normal CSS.
       cssExtend: {
         code: {
-          color: '#8b5cf6'
+          color: '#8b5cf6',
         },
         'a:hover': {
-          color: '#f43f5e'
+          color: '#f43f5e',
         },
         'a:visited': {
-          color: '#14b8a6'
-        }
-      }
-    })
-  ]
+          color: '#14b8a6',
+        },
+      },
+    }),
+  ],
 })
 ```
 
