@@ -121,7 +121,6 @@ export const DEFAULT = {
     margin: '1em 0',
     padding: '1.25rem 1.5rem',
     background: 'var(--uno-prose-bg-soft)',
-    'border-left': '.5em solid',
   },
   summary: {
     cursor: 'pointer',
