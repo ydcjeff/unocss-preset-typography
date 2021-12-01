@@ -16,7 +16,7 @@
     "declarationDir": "./temp",
     "emitDeclarationOnly": true,
     "paths": {
-      "unocss-preset-typography": ["./dist"]
+      "unocss-preset-typography": ["./src"]
     }
   },
   "include": ["./src/**/*.ts", "./tests/**/*"],
