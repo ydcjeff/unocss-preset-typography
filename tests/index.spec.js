@@ -1,5 +1,3 @@
-// @ts-check
-
 import { suite } from 'uvu'
 import * as assert from 'uvu/assert'
 import { createGenerator, presetUno, presetAttributify } from 'unocss'

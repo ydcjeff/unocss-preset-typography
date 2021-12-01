@@ -1,8 +1,6 @@
-// @ts-check
-
-import fs from 'fs'
-import path from 'path'
-import url from 'url'
+import * as fs from 'fs'
+import * as path from 'path'
+import * as url from 'url'
 
 const snapshotDirName = '__snapshots__'
 const _dirname = path.dirname(url.fileURLToPath(import.meta.url))

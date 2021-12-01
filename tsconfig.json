@@ -2,11 +2,11 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "lib": ["esnext"],
+    "allowJs": true,
+    "checkJs": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
-    "strictNullChecks": true,
     "resolveJsonModule": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -14,8 +14,11 @@
     "outDir": "./temp",
     "declaration": true,
     "declarationDir": "./temp",
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "paths": {
+      "unocss-preset-typography": ["./dist"]
+    }
   },
-  "include": ["./src/**/*.ts"],
+  "include": ["./src/**/*.ts", "./tests/**/*"],
   "exclude": ["**/node_modules/**"]
 }

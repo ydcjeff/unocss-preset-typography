@@ -34,8 +34,8 @@ export default defineConfig({
       ? false
       : {
           entry: './src/index.ts',
-          formats: ['es', 'cjs'],
-          fileName: (fmt: string) => 'index' + (fmt === 'es' ? `.js` : `.cjs`),
+          formats: ['es'],
+          fileName: () => 'index.js',
         },
     rollupOptions: {
       external: ['unocss'],

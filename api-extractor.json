@@ -10,7 +10,7 @@
   "tsdocMetadata": {
     "enabled": false
   },
-  "mainEntryPointFilePath": "./temp/index.d.ts",
+  "mainEntryPointFilePath": "./temp/src/index.d.ts",
   "dtsRollup": {
     "enabled": true,
     "untrimmedFilePath": "./dist/index.d.ts"
