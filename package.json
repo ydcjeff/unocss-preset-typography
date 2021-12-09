@@ -21,21 +21,19 @@
     "release": "npx bumpp package.json --commit \"release: v\" --push --tag"
   },
   "devDependencies": {
-    "@iconify-json/carbon": "^1.0.11",
-    "@microsoft/api-extractor": "^7.18.19",
+    "@microsoft/api-extractor": "^7.19.1",
     "@types/estree": "^0.0.50",
-    "@types/node": "^16.11.10",
-    "@ydcjeff/prettier-config": "^1.2.0",
-    "jiti": "^1.12.9",
-    "marked": "^4.0.5",
-    "prettier": "^2.5.0",
+    "@types/node": "^16.11.12",
+    "@ydcjeff/prettier-config": "^0.1.0",
+    "marked": "^4.0.6",
+    "prettier": "^2.5.1",
     "typescript": "^4.5.2",
-    "unocss": "^0.12.13",
+    "unocss": "^0.15.6",
     "uvu": "^0.5.2",
-    "vite": "^2.6.14"
+    "vite": "~2.6.14"
   },
   "peerDependencies": {
-    "unocss": "^0.12.1"
+    "unocss": "^0.15.6"
   },
   "prettier": "@ydcjeff/prettier-config",
   "repository": {
