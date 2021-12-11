@@ -14,7 +14,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && api-extractor run",
-    "build-demo": "DEMO=demo vite build",
+    "build-demo": "vite build --mode demo",
     "test": "uvu tests -i utils",
     "preview": "vite preview",
     "fmt": "prettier -w .",

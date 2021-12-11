@@ -1,10 +1,9 @@
 import { defineConfig } from 'vite'
 import { presetUno, presetAttributify } from 'unocss'
 import { presetTypography } from './src'
-
 import unocss from 'unocss/vite'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [
     unocss({
       presets: [
@@ -28,8 +27,8 @@ export default defineConfig({
     }),
   ],
   build: {
-    minify: process.env.DEMO === 'demo',
-    lib: process.env.DEMO
+    minify: mode === 'demo',
+    lib: mode === 'demo'
       ? false
       : {
           entry: './src/index.ts',
@@ -40,4 +39,4 @@ export default defineConfig({
       external: ['unocss'],
     },
   },
-})
+}))
