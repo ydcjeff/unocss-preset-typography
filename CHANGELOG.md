@@ -2,6 +2,23 @@
 
 <!-- CHLOG_SPLIT_MARKER -->
 
+## [v0.4.0](https://github.com/ydcjeff/unocss-preset-typography/compare/v0.3.0...v0.4.0)
+
+_2022-01-21_
+
+### BREAKING CHANGES
+
+- [`ada562a`](https://github.com/ydcjeff/unocss-preset-typography/commit/ada562a)
+  **(build)** distribute as pure ESM package
+
+### Bug Fixes
+
+- [`f20ac58`](https://github.com/ydcjeff/unocss-preset-typography/commit/f20ac58)
+  **(details)** remove border-left
+
+- [`04e182c`](https://github.com/ydcjeff/unocss-preset-typography/commit/04e182c)
+  tsc path to src
+
 ## [v0.3.0](https://github.com/ydcjeff/unocss-preset-typography/compare/v0.2.2...v0.3.0)
 
 _2021-11-22_
