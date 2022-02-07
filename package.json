@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "description": "Typography Preset for UnoCSS",
   "engines": {
-    "node": ">=14.18"
+    "node": ">=v16.13.2"
   },
   "type": "module",
   "types": "./dist/index.d.ts",
