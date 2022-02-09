@@ -1,4 +1,4 @@
-# unocss-preset-typography
+# Moved to [@unocss/preset-typography](https://github.com/unocss/unocss/tree/main/packages/preset-typography)
 
 <p>
   <a href="https://npmjs.com/package/unocss-preset-typography" target="_blank" rel="noopener noreferrer">
